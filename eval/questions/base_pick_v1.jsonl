@@ -1,0 +1,20 @@
+{"id": "q01", "lang": "en", "type": "concept", "q": "Explain the bathtub curve and what causes failures in each of its three regions."}
+{"id": "q02", "lang": "en", "type": "concept", "q": "What is the difference between MTTF and MTBF? When is each one used?"}
+{"id": "q03", "lang": "en", "type": "derivation", "q": "Derive the reliability of a system of n independent components connected in parallel, and show why adding components gives diminishing returns."}
+{"id": "q04", "lang": "en", "type": "concept", "q": "Why is the exponential distribution called memoryless, and why does that make it unsuitable for modelling wear-out failures?"}
+{"id": "q05", "lang": "en", "type": "numerical", "q": "A component has a constant failure rate of 2 x 10^-4 per hour. Find its reliability at 1000 hours and its MTTF."}
+{"id": "q06", "lang": "en", "type": "concept", "q": "Explain the Weibull shape parameter beta. What does beta < 1, beta = 1 and beta > 1 tell you about the failure mechanism?"}
+{"id": "q07", "lang": "en", "type": "exam", "q": "Write a 10-mark answer on Failure Mode and Effects Analysis (FMEA), including how the Risk Priority Number is calculated."}
+{"id": "q08", "lang": "hinglish", "type": "concept", "q": "Sir, series aur parallel system ki reliability mein kya difference hai? Simple example ke saath samjhao."}
+{"id": "q09", "lang": "hinglish", "type": "numerical", "q": "Teen components series mein hain, unki reliability 0.95, 0.9 aur 0.98 hai. System reliability kitni hogi? Step by step batao."}
+{"id": "q10", "lang": "hinglish", "type": "concept", "q": "Availability aur reliability same cheez hai kya? Inherent availability ka formula bhi batao."}
+{"id": "q11", "lang": "hinglish", "type": "concept", "q": "Fault tree analysis mein AND gate aur OR gate ka kya matlab hai? Minimal cut set kya hota hai?"}
+{"id": "q12", "lang": "hinglish", "type": "derivation", "q": "2-out-of-3 system ki reliability ka formula derive karo jab har component ki reliability R ho."}
+{"id": "q13", "lang": "hinglish", "type": "concept", "q": "Standby redundancy aur active redundancy mein kya fark hai? Kaunsa better hai aur kab?"}
+{"id": "q14", "lang": "hi", "type": "concept", "q": "विश्वसनीयता (reliability) की परिभाषा क्या है? इसके चार मुख्य तत्व समझाइए।"}
+{"id": "q15", "lang": "hi", "type": "concept", "q": "हैज़र्ड रेट (failure rate) और reliability function में क्या संबंध है?"}
+{"id": "q16", "lang": "hi", "type": "numerical", "q": "दो समान components parallel में जुड़े हैं, प्रत्येक की reliability 0.8 है। system की reliability ज्ञात कीजिए।"}
+{"id": "q17", "lang": "hi", "type": "concept", "q": "Maintainability और MTTR को उदाहरण सहित समझाइए।"}
+{"id": "q18", "lang": "en", "type": "numerical", "q": "A system has MTBF of 500 hours and MTTR of 20 hours. Calculate its steady-state availability."}
+{"id": "q19", "lang": "hinglish", "type": "misconception", "q": "Mera dost bolta hai ki agar MTTF 1000 hours hai to component 1000 hours tak pakka chalega. Kya ye sahi hai?"}
+{"id": "q20", "lang": "en", "type": "concept", "q": "Explain how a two-state Markov model is used to find the availability of a repairable system."}

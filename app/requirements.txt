@@ -1,0 +1,9 @@
+PySide6>=6.7
+mss>=9.0
+numpy>=1.26,<3
+Pillow>=10
+sounddevice>=0.4.7
+sherpa-onnx>=1.10
+rapidocr_onnxruntime>=1.3.24
+onnxruntime>=1.17
+pynput>=1.7.6

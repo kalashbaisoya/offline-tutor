@@ -1,0 +1,9 @@
+{
+ "num_ok": 925,
+ "dropped_book_ref": 378,
+ "num": 766,
+ "num_rejected": 196,
+ "qa": 2537,
+ "malformed": 25,
+ "total": 3303
+}

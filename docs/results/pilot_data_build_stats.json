@@ -1,0 +1,11 @@
+{
+ "num_ok": 208,
+ "num": 198,
+ "dropped_book_ref": 43,
+ "qa": 399,
+ "slides": 226,
+ "num_rejected": 3,
+ "malformed": 1,
+ "honest": 66,
+ "total": 889
+}

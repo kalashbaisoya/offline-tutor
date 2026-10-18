@@ -1,0 +1,29 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.claude/
+
+# model weights and third-party builds (downloaded/built by the setup scripts)
+models/*
+!models/SHA256SUMS
+!models/hinglish_lexicon.json
+third_party/
+
+# book material and anything derived from it (copyrighted; rebuild from your own licensed copies)
+data/
+*.pdf
+*.pptx
+pack*.jsonl
+
+# vendored web assets for the chat window (downloaded by app/setup_windows.ps1)
+app/tutor_app/assets/katex/
+app/tutor_app/assets/marked.min.js
+app/requirements.lock.txt
+
+# run outputs
+eval/out/*
+!eval/out/base_pick_v1/
+eval/out_gen.log
+bench/hw/results/*.csv
+*.log

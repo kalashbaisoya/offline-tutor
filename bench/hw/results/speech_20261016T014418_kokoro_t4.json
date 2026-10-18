@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "tts_engine": "kokoro",
+    "threads": 4,
+    "tts_load_s": 0.84,
+    "asr_load_s": 1.69,
+    "tts_rtf_mean": 0.502,
+    "tts_first_sentence_s": 1.545,
+    "tts_long_sentence_s": 2.916,
+    "asr_rtf_mean": 0.064,
+    "asr_latency_max_s": 0.335,
+    "roundtrip_wer_mean": 0.053
+  },
+  "rows": [
+    {
+      "rep": 0,
+      "text": "Wait, I didn't understand the previous step.",
+      "audio_s": 2.39,
+      "tts_s": 1.468,
+      "tts_rtf": 0.615,
+      "asr_s": 0.189,
+      "asr_rtf": 0.079,
+      "hyp": "Wait, I didn't understand the previous step.",
+      "wer": 0.0
+    },
+    {
+      "rep": 0,
+      "text": "The probability of A given B equals the probability of A and B divided by the probability of B.",
+      "audio_s": 5.9,
+      "tts_s": 2.619,
+      "tts_rtf": 0.444,
+      "asr_s": 0.301,
+      "asr_rtf": 0.051,
+      "hyp": "The probability of a given B equals the probability of A and B divided by the probability of B.",
+      "wer": 0.0
+    },
+    {
+      "rep": 0,
+      "text": "Let's check your answer: if the events were independent, the joint probability would be zero point one two.",
+      "audio_s": 5.57,
+      "tts_s": 2.677,
+      "tts_rtf": 0.48,
+      "asr_s": 0.342,
+      "asr_rtf": 0.061,
+      "hyp": "Let's check your answer. If the events were independent, the joint probability would be 0.12.",
+      "wer": 0.211
+    },
+    {
+      "rep": 0,
+      "text": "Before I show the solution, what do you think the expected value of a fair six sided die is?",
+      "audio_s": 5.32,
+      "tts_s": 2.548,
+      "tts_rtf": 0.479,
+      "asr_s": 0.29,
+      "asr_rtf": 0.055,
+      "hyp": "Before I show the solution, what do you think the expected value of a fair six-sided die is?",
+      "wer": 0.0
+    },
+    {
+      "rep": 1,
+      "text": "Wait, I didn't understand the previous step.",
+      "audio_s": 2.39,
+      "tts_s": 1.545,
+      "tts_rtf": 0.647,
+      "asr_s": 0.23,
+      "asr_rtf": 0.096,
+      "hyp": "Wait, I didn't understand the previous step.",
+      "wer": 0.0
+    },
+    {
+      "rep": 1,
+      "text": "The probability of A given B equals the probability of A and B divided by the probability of B.",
+      "audio_s": 5.9,
+      "tts_s": 2.675,
+      "tts_rtf": 0.454,
+      "asr_s": 0.3,
+      "asr_rtf": 0.051,
+      "hyp": "The probability of a given B equals the probability of A and B divided by the probability of B.",
+      "wer": 0.0
+    },
+    {
+      "rep": 1,
+      "text": "Let's check your answer: if the events were independent, the joint probability would be zero point one two.",
+      "audio_s": 5.58,
+      "tts_s": 2.916,
+      "tts_rtf": 0.523,
+      "asr_s": 0.335,
+      "asr_rtf": 0.06,
+      "hyp": "Let's check your answer. If the events were independent, the joint probability would be 0.12.",
+      "wer": 0.211
+    },
+    {
+      "rep": 1,
+      "text": "Before I show the solution, what do you think the expected value of a fair six sided die is?",
+      "audio_s": 5.32,
+      "tts_s": 2.046,
+      "tts_rtf": 0.385,
+      "asr_s": 0.259,
+      "asr_rtf": 0.049,
+      "hyp": "Before I show the solution, what do you think the expected value of a fair six-sided die is?",
+      "wer": 0.0
+    }
+  ]
+}

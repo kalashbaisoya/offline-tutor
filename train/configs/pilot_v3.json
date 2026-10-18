@@ -1,0 +1,17 @@
+{
+ "base": "models/gemma-4-E4B-it",
+ "data": [
+  {"path": "data/pilot/onpolicy/sft.jsonl", "weight": 1.0},
+  {"path": "data/replay/replay.jsonl", "weight": 1.0}
+ ],
+ "out": "run/sft_pilot_v3",
+ "max_len": 2048,
+ "lora_r": 64,
+ "lora_alpha": 64,
+ "lr": 5e-5,
+ "epochs": 2,
+ "batch_tokens": 4096,
+ "val_fraction": 0.05,
+ "eval_every": 25,
+ "save_every": 50
+}

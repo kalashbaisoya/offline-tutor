@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="katex/katex.min.css">
+<script src="katex/katex.min.js"></script>
+<script src="marked.min.js"></script>
+<style>
+  :root { --bg: #f7f7f9; --card: #ffffff; --user: #e8f0fe; --text: #1d1d1f; --muted: #6b6b76; --accent: #1a73e8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1e1f22; --card: #2a2b2f; --user: #263449; --text: #e8e8ea; --muted: #9a9aa3; --accent: #8ab4f8; }
+  }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 14px/1.5 "Segoe UI", system-ui, sans-serif; }
+  #log { padding: 12px; }
+  .msg { background: var(--card); border-radius: 10px; padding: 10px 12px; margin: 0 0 10px; overflow-x: auto; }
+  .msg.user { background: var(--user); }
+  .msg.note { background: transparent; color: var(--muted); font-size: 12px; padding: 2px 4px; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .thumb { display: block; max-width: 100%; max-height: 160px; border-radius: 6px; margin-top: 6px;
+    border: 1px solid rgba(127,127,127,.3); }
+  .msg p { margin: .4em 0; }
+  .msg pre { background: rgba(127,127,127,.12); padding: 8px; border-radius: 6px; overflow-x: auto; }
+  .msg table { border-collapse: collapse; } .msg td, .msg th { border: 1px solid rgba(127,127,127,.35); padding: 3px 6px; }
+  .cursor::after { content: "▍"; color: var(--accent); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .empty { color: var(--muted); text-align: center; margin-top: 30vh; padding: 0 24px; }
+</style>
+</head>
+<body>
+<div id="log"><div class="empty" id="empty">Click the floating circle (or press the hotkey) and ask by voice.<br>
+Your screen is shared only during that moment; circle anything to point at it.<br>You can also type below.</div></div>
+<script>
+marked.setOptions({ gfm: true, breaks: true });
+
+// Protect math from the Markdown parser, then render it with KaTeX.
+function renderMarkdown(src) {
+  const math = [];
+  const keep = (tex, display) => { math.push({ tex, display }); return "\u0000M" + (math.length - 1) + "\u0000"; };
+  src = src
+    .replace(/\$\$([\s\S]+?)\$\$/g, (_, t) => keep(t, true))
+    .replace(/\\\[([\s\S]+?)\\\]/g, (_, t) => keep(t, true))
+    .replace(/\\\(([\s\S]+?)\\\)/g, (_, t) => keep(t, false))
+    .replace(/(^|[^\\$])\$([^\s$](?:[^$\n]*?[^\s$])?)\$/g, (_, pre, t) => pre + keep(t, false));
+  let html = marked.parse(src);
+  return html.replace(/\u0000M(\d+)\u0000/g, (_, i) => {
+    const m = math[+i];
+    try { return katex.renderToString(m.tex, { displayMode: m.display, throwOnError: false }); }
+    catch (e) { return m.tex; }
+  });
+}
+function escapeHtml(s) { return s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function el(id) { return document.getElementById(id); }
+function add(div) {
+  const e = el("empty"); if (e) e.remove();
+  el("log").appendChild(div); window.scrollTo(0, document.body.scrollHeight);
+}
+function addUser(id, text, thumb, meta) {
+  const d = document.createElement("div"); d.className = "msg user"; d.id = id;
+  d.innerHTML = renderMarkdown(text) + (thumb ? '<img class="thumb" src="' + thumb + '">' : "") +
+                (meta ? '<div class="meta">' + escapeHtml(meta) + "</div>" : "");
+  add(d);
+}
+function setAssistant(id, text, done) {
+  let d = el(id);
+  if (!d) { d = document.createElement("div"); d.className = "msg"; d.id = id; add(d); }
+  const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 40;
+  d.innerHTML = renderMarkdown(text || "");
+  d.classList.toggle("cursor", !done);
+  if (atBottom) window.scrollTo(0, document.body.scrollHeight);
+}
+function note(text) { const d = document.createElement("div"); d.className = "msg note"; d.textContent = text; add(d); }
+function clearLog() { el("log").innerHTML = ""; }
+</script>
+</body>
+</html>
